@@ -10,9 +10,9 @@ class PostImagesController < ApplicationController
       redirect_to post_images_path
     else
       render :new
-    
+    end
   end
-
+  
   def index
     @post_images = PostImage.page(params[:page]).reverse_order
   end
@@ -32,4 +32,6 @@ class PostImagesController < ApplicationController
   def post_image_params
     params.require(:post_image).permit(:shop_name, :image, :caption)
   end
+
+
 end
